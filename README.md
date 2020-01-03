@@ -27,6 +27,7 @@ QS-inputs的拆分版
 
 | 版本| 说明|
 | --------- | -------- |
+| v1.5| 1、picker类型完善show、hide的事件监听 2、优化picker类型显示初始值问题|
 | v1.4| 1、修复picker初始值、初始化、v-model等问题，picker类型新增方法setPickerValue，可用ref调用，详见[picker类型说明](#QS-picker) |
 | v1.3| 废弃input类型的inputSet属性，将其内的属性展开 |
 | v1.2| 修复picker的一些报错问题, 新增公共属性titleColor(其实可以使用titleStyle), 并将picker类型的titleColor属性名修改为pickerTitleColor |
@@ -324,6 +325,10 @@ data为form数据，verifyErr为校验失败的项
 | zIndex| | Number|  | z-index属性， 应该没用, 应该要由父级控制|
 | bgColor_title| | Color|  `#F8F8F8`| title的背景颜色|
 | autoHide| | Boolean|  true| 在用户选择后是否自动隐藏|
+| `v1.5更新`| | |  | |
+| @showQSPicker| | Function|  | picker显示时触发|
+| @hideQSPicker| | Function|  | picker隐藏时触发|
+| `over`| | |  | |
 | `picker-custom与pciker-custom2额外支持以下属性`| | |  | |
 | linkage| | Boolean|  | 是否联动|
 | linkageNum| | Number|  2| 联动级数|

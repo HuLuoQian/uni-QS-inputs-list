@@ -1,7 +1,7 @@
 <template>
 	<QSPickerTemplate ref="QSPickerTem" :height="height" :lineHeight="lineHeight" :fontScale="fontScale"
 	  :buttonSet="buttonSet" :title="title" :mode="mode" :zIndex="zIndex" :bgColor_title="bgColor_title"
-	 :autoHide="autoHide" :titleColor="titleColor" @confirm="confirm">
+	 :autoHide="autoHide" :titleColor="titleColor" @confirm="confirm" @showQSPicker="showQSPicker" @hideQSPicker="hideQSPicker">
 		<!-- #ifndef MP-ALIPAY -->
 		<picker-view @touchmove.prevent.stop="voidFc()" indicator-style="height: 60px;" :value="value" @change="bindChange($event)">
 			<picker-view-column v-if="setObj.dateMode>=1">
@@ -193,6 +193,12 @@
 				obj.data = data;
 				this.$emit('confirm', obj);
 				if (this.autoHide && !showDefaultValue) this.hide();
+			},
+			showQSPicker() {
+				this.$emit('showQSPicker');
+			},
+			hideQSPicker() {
+				this.$emit('hideQSPicker');
 			}
 		}
 	}

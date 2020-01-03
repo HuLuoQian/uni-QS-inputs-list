@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<QSPickerDate :name="formName" variableName="date" :dataSet="dataSet" title="日期" :value="dateValue"  placherhold="请选择" />
+		<QSPickerDate ref="a" :name="formName" variableName="date"  title="日期"  placherhold="请选择" @showQSPicker="showQSPicker" @hideQSPicker="hideQSPicker"/>
 		<button type="primary" style="margin-top: 50rpx;" @tap="getData">获取输入</button>
 	</view>
 </template>
@@ -19,6 +19,9 @@
 				}
 			}
 		},
+		onReady() {
+			this.$refs.a.confirm();
+		},
 		methods: {
 			getData() {
 				QSApp.getForm(this.formName).then(res => {
@@ -29,6 +32,12 @@
 					console.log('获取FORM数据失败: ' + JSON.stringify(err));
 					uni.showToast({ title: '获取数据异常' });
 				});
+			},
+			showQSPicker() {
+				console.log('显示了')
+			},
+			hideQSPicker() {
+				console.log('隐藏了')
 			}
 		}
 	}

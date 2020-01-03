@@ -78,6 +78,8 @@
 		:autoHide="autoHide"
 		@confirm="confirm"
 		@pickerChange="pickerChange"
+		@showQSPicker="showQSPicker"
+		@hideQSPicker="hideQSPicker"
 		
 		:linkage="linkage"
 		:linkageNum="linkageNum"

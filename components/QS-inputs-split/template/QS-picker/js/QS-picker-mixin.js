@@ -106,11 +106,9 @@ export default ({
 				if(this.$refs.QSPickerTem.checkAsync && typeof this.$refs.QSPickerTem.checkAsync === 'function') {
 					this.$refs.QSPickerTem.checkAsync();
 				}
-				this.$emit('showQSPicker');
 			},
 			hide() {
 				this.$refs.QSPickerTem.hide();
-				this.$emit('hideQSPicker');
 			},
 			setPickerValue(value) {
 				console.log('picker设置值:' + JSON.stringify(value));

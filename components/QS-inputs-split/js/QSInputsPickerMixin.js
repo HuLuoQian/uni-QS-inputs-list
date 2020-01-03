@@ -62,8 +62,12 @@ export default () => {
 		methods: {
 			confirm(obj) {
 				if(!obj) {
-					if(!this.$refs.inputsRef.checkInited()) this.$refs.inputsRef.init();
-					this.$refs.inputsRef.confirm({showDefaultValue: true});
+					if(!this.$refs.inputsRef.checkInited()) {
+						this.$refs.inputsRef.init();
+					}
+					this.$nextTick(()=>{
+						this.$refs.inputsRef.confirm({showDefaultValue: true});
+					})
 				}else{
 					this.nValue = obj;
 					// this.$set(this, 'nValue', obj);
@@ -72,7 +76,6 @@ export default () => {
 			},
 			setPickerValue(value) {
 				if(this.$refs.inputsRef && typeof this.$refs.inputsRef.setPickerValue === 'function'){
-					console.log('value:' + JSON.stringify(value));
 					this.$refs.inputsRef.setPickerValue(value);
 				}else{
 					console.log('找不到setValue方法');
@@ -86,6 +89,12 @@ export default () => {
 			},
 			pickerChange(obj) {
 				this.$emit('pickerChange', obj);
+			},
+			showQSPicker() {
+				this.$emit('showQSPicker');
+			},
+			hideQSPicker() {
+				this.$emit('hideQSPicker');
 			}
 		}
 	}

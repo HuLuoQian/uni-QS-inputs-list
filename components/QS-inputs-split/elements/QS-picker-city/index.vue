@@ -26,7 +26,9 @@
 		:titleColor="pickerTitleColor"
 		:autoHide="autoHide"
 		@confirm="confirm"
-		@pickerChange="pickerChange"></pickerCity>
+		@pickerChange="pickerChange"
+		@showQSPicker="showQSPicker"
+		@hideQSPicker="hideQSPicker"></pickerCity>
 	</view>
 </template>
 

@@ -138,9 +138,11 @@
 			},
 			show() {
 				this.showPicker = true;
+				this.$emit('showQSPicker');
 			},
 			hide() {
 				this.showPicker = false;
+				this.$emit('hideQSPicker');
 			},
 			voidFc() {}
 		}
